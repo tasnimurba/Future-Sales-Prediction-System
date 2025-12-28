@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Upload</title>
+  <link rel="stylesheet" href="/css/image-upload.css">
+</head>
+<body>
+
+<h2>Upload Product Image</h2>
+
+<form th:action="@{/analyze-image}" method="post" enctype="multipart/form-data">
+  <input type="file" name="imageFile" accept="image/*" required>
+  <button type="submit">Predict</button>
+</form>
+
+<div th:if="${prediction}">
+  <h3>Prediction:</h3>
+  <p th:utext="${prediction}"></p>
+</div>
+
+<a href="/dashboard"><button>⬅ Back to Dashboard</button></a>
+
+</body>
+</html>

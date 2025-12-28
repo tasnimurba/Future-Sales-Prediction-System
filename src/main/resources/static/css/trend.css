@@ -1,0 +1,154 @@
+/* === Base Page Setup === */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #14002e, #2a004f);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* === Page Title === */
+h2.page-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    color: #00e5ff;
+    margin: 40px 0 10px;
+    letter-spacing: 1px;
+}
+
+/* === Container for Chart + Summary Panels === */
+.trend-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #1a0033, #3a006a);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* === Chart Area === */
+.chart-left {
+    flex: 2;
+    min-width: 600px;
+    background: #2a004f;
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* === Summary Panel === */
+.summary-right {
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* === Sales Summary === */
+#salesSummary {
+    background: #4b0082;
+    padding: 25px 20px;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    color: #e0d7ff;
+    max-height: 520px;
+    overflow-y: auto;
+}
+
+/* Scrollbar for Summary */
+#salesSummary::-webkit-scrollbar {
+    width: 8px;
+}
+#salesSummary::-webkit-scrollbar-thumb {
+    background: #7b3393;
+    border-radius: 10px;
+}
+#salesSummary::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Sales Bar Row */
+.bar-row {
+    margin-bottom: 18px;
+    padding: 14px 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.15);
+    transition: background 0.3s ease;
+    cursor: default;
+}
+.bar-row:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.bar-row span {
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffecb3;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Bars */
+.bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bar-actual, .bar-predicted {
+    height: 24px;
+    border-radius: 10px;
+    padding: 0 14px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: #111;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.2);
+}
+
+.bar-actual {
+    background: linear-gradient(90deg, #00e5ff, #00aacc);
+    box-shadow: 0 2px 8px rgba(0, 229, 255, 0.7);
+}
+
+.bar-predicted {
+    background: linear-gradient(90deg, #ff5ecf, #d6327a);
+    box-shadow: 0 2px 8px rgba(224, 81, 81, 0.7);
+}
+
+/* === Prediction Box === */
+#nextMonthPrediction {
+    text-align: center;
+}
+
+.forecast-box {
+    background: #35005c;
+    padding: 30px 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    color: #a0ffb1;
+    user-select: none;
+}
+
+.prediction-value {
+    font-size: 38px;
+    font-weight: 900;
+    color: #00ff88;
+    letter-spacing: 0.04em;
+}
+
+.prediction-note {
+    font-size: 16px;
+    color: #98f7a7;
+    margin-top: 12px;
+    font-weight: 600;
+}

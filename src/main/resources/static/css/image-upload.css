@@ -1,0 +1,96 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #501444);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #da22ff, #9733ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Prediction Result (assumes no custom class) */
+h3 + p {
+    margin-top: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Form Styling */
+form {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(201, 106, 12, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 320px;
+}
+
+/* File input */
+input[type="file"] {
+    background-color: #222;
+    color: #fff;
+    padding: 0.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    font-size: 0.95rem;
+}
+
+/* Submit & Back Buttons */
+button {
+    background-color: #6a0dad;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #c0750e;
+}
+
+/* Back button inside <a> */
+a > button {
+    margin-top: 3rem;
+    background-color: transparent;
+    border: 2px solid #c0750e;
+    color: #c0750e;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+a > button:hover {
+    background-color: #c0750e;
+    color: #000;
+}

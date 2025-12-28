@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Trends</title>
+    <link rel="stylesheet" href="/css/trend.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Page Heading -->
+<h2 class="page-title">Sales Prediction Trend</h2>
+
+<!-- Chart + Summary Section -->
+<div class="trend-container">
+    <div class="chart-left">
+        <canvas id="trendChart"></canvas>
+    </div>
+
+    <div class="summary-right">
+        <div id="salesSummary"></div>
+        <div id="nextMonthPrediction"></div>
+    </div>
+</div>
+
+<!-- Back to Dashboard -->
+<div style="text-align: center; margin: 40px 0;">
+    <a href="/dashboard">
+        <button style="padding: 10px 20px; font-weight: bold; border-radius: 8px; background-color: #00e5ff; border: none; color: #000; cursor: pointer;">
+            ⬅ Back to Dashboard
+        </button>
+    </a>
+</div>
+
+<!-- Chart Script -->
+<script src="/js/trend.js"></script>
+
+</body>
+</html>

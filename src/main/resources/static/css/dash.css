@@ -1,0 +1,190 @@
+/* Root Body Setup */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #501444);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+
+/* Layout */
+.main-container {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    min-height: 100vh; /* Important */
+}
+
+
+.sidebar {
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push logout button to bottom */
+    min-height: 100vh; /* Force full height like table area */
+}
+
+/*div diye sidebar add korar pore*/
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.sidebar-btn {
+    background-color: #6a0dad;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-btn:hover {
+    background-color: #c0750e;
+}
+
+.sidebar-btn.logout-btn {
+    background-color: #ff3333;
+}
+
+.sidebar-btn.logout-btn:hover {
+    background-color: #ff6666;
+}
+/*div diye sidebar add korar pore*/
+
+
+/* Welcome Animation */
+.welcome-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #893369, #fad0c4, #9f1e1e, #c96a0c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeSlideIn 2s ease-in-out;
+}
+
+/* Fade + Slide-in Effect */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Typography */
+h2, h3 {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-top: 0.5rem;
+}
+
+/* Forms */
+form {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+input, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input {
+    background-color: #222;
+    color: #fff;
+}
+
+button {
+    background-color: #6a0dad;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c0750e;
+}
+
+/* Table */
+table {
+    width: 100%;
+    margin-top: 0.2rem;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+th, td {
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Logout Button */
+.logout-btn {
+    margin-top: 2rem;
+    background-color: #ff3333;
+}
+
+.logout-btn:hover {
+    background-color: #ff6666;
+}
+
+/* Prediction Box */
+.prediction-box {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    height: 100%;
+}
+
+
+/* Error Message */
+.error {
+    color: #ff4d4d;
+    margin-top: 1rem;
+}
+
+/* Scrollable Entries */
+.scrollable-entries {
+    max-height: 250px;
+    overflow-y: auto;
+}

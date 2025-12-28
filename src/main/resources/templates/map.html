@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Location Map</title>
+    <link rel="stylesheet" href="/css/map.css">
+</head>
+<body>
+
+<h2>Select a Product to View Its Location</h2>
+
+<!-- ✅ Product Selection Form -->
+<form th:action="@{/map}" method="post">
+    <select name="selectedProductId" required>
+        <option value="" disabled selected>Select product</option>
+        <option th:each="product : ${productList}"
+                th:value="${product.pId}"
+                th:text="${product.name + ' (' + product.location + ')'}">
+        </option>
+    </select>
+    <button type="submit">View</button>
+</form>
+
+<br><br>
+
+<!-- ✅ Show map and details only if product is selected -->
+<div th:if="${selectedProduct != null}">
+
+    <!-- ✅ MAP BOX -->
+    <div id="map"></div>
+
+    <br>
+
+    <!-- ✅ Product Info Table -->
+    <table>
+        <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Location</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${selectedProduct.name}"></td>
+            <td th:text="${selectedProduct.category}"></td>
+            <td th:text="${selectedProduct.price}"></td>
+            <td th:text="${selectedProduct.location}"></td>
+            <td th:text="${selectedProduct.latitude}"></td>
+            <td th:text="${selectedProduct.longitude}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<a href="/dashboard">
+    <button style="margin-top: 20px;">
+        🔙 Back to Dashboard
+    </button>
+</a>
+
+<!--Open-source JS library to show interactive maps-->
+<!--OpenStreetMap (OSM) provides free map data under an open license.
+What does it do in Leaflet?
+Leaflet shows this attribution text usually at the bottom right or bottom left corner of the map.
+
+It lets users know the map data is from OpenStreetMap and links to their site.
+
+This is part of respecting the terms of use for open map data providers.-->
+<!-- ✅ Leaflet Map Script -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    let selected = [[${selectedProduct}]];
+    if (selected && selected.latitude && selected.longitude) {
+        let map = L.map('map').setView([selected.latitude, selected.longitude], 12);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([selected.latitude, selected.longitude])
+            .addTo(map)
+            .bindPopup(selected.name + "<br>" + selected.location)
+            .openPopup();
+    }
+    /*]]>*/
+</script>
+
+</body>
+</html>
